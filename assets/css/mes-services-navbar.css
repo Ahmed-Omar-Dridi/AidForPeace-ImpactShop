@@ -1,0 +1,712 @@
+/* ============================================= */
+/* COULEURS EXACTES DE LA PAGE MON PROFIL */
+/* ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background: #ffffff !important;
+    line-height: 1.6 !important;
+    color: #333 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* NAVBAR - EXACTEMENT COMME TON SCREENSHOT MES SERVICES */
+.modern-navbar {
+    background: #1e2936 !important;
+    padding: 0 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.25rem 2rem !important;
+    height: 80px !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    transition: opacity 0.3s ease !important;
+    letter-spacing: 0.5px !important;
+}
+
+.navbar-brand:hover {
+    opacity: 0.9 !important;
+}
+
+.navbar-actions {
+    display: flex !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+}
+
+.navbar-user-info {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1rem !important;
+    margin-right: 0.5rem !important;
+    font-weight: 400 !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar-btn {
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    border: none !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+.btn-home {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-home:hover {
+    background: #2563eb !important;
+}
+
+.btn-logout {
+    background: #f97316 !important;
+    color: white !important;
+    font-weight: 700 !important;
+    border: none !important;
+}
+
+.btn-logout:hover {
+    background: #ea580c !important;
+}
+
+.btn-logout:hover {
+    background: #e67e22 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.5), 0 0 30px rgba(243, 156, 18, 0.2) !important;
+}
+
+/* SIDEBAR - EXACTEMENT COMME MON PROFIL */
+.profile-sidebar {
+    width: 280px !important;
+    background: #1a2332 !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 80px !important;
+    bottom: 0 !important;
+    padding: 2rem 0 !important;
+    overflow-y: auto !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3) !important;
+    z-index: 999 !important;
+    animation: slideInLeft 0.5s ease-out !important;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sidebar-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 0 1rem !important;
+}
+
+.sidebar-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 20px !important;
+    margin: 0 1rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+}
+
+.sidebar-link:hover {
+    background: #2d3748 !important;
+    color: white !important;
+    transform: translateX(4px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 16px rgba(243, 156, 18, 0.4), 0 0 20px rgba(243, 156, 18, 0.2) !important;
+    position: relative !important;
+}
+
+.sidebar-link.active::before {
+    content: '' !important;
+    position: absolute !important;
+    left: -1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 4px !important;
+    height: 70% !important;
+    background: #f39c12 !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.sidebar-link i {
+    width: 24px !important;
+    font-size: 18px !important;
+    text-align: center !important;
+}
+
+.sidebar-section {
+    margin: 1rem 0 !important;
+}
+
+.sidebar-section-title {
+    padding: 12px 20px !important;
+    margin: 0 1rem !important;
+    color: #e91e63 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-shadow: 0 0 10px rgba(233, 30, 99, 0.3) !important;
+    animation: fadeIn 1s ease-out !important;
+}
+
+.sidebar-sublink {
+    padding-left: 40px !important;
+    font-size: 14px !important;
+}
+
+.sidebar-user-profile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 20px !important;
+    background: #2d3748 !important;
+    border-radius: 12px !important;
+    margin: 0 1rem 1.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+    animation: fadeIn 0.8s ease-out !important;
+    position: relative !important;
+}
+
+.sidebar-user-profile:hover {
+    background: #34495e !important;
+    transform: scale(1.02) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.sidebar-avatar {
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    flex-shrink: 0 !important;
+    transition: all 0.3s ease !important;
+    background: #34495e !important;
+}
+
+.sidebar-avatar:hover {
+    transform: scale(1.05) !important;
+    border-color: #3b82f6 !important;
+}
+
+.sidebar-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.sidebar-user-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.sidebar-user-name {
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.sidebar-user-role {
+    background: #3b82f6 !important;
+    color: white !important;
+    font-size: 11px !important;
+    text-transform: capitalize !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    margin-top: 4px !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.sidebar-user-role:hover {
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5) !important;
+    transform: scale(1.05) !important;
+}
+
+.sidebar-divider {
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    margin: 1.5rem 1rem !important;
+    animation: expandWidth 0.8s ease-out !important;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Content Area - FOND BLANC UNIQUEMENT */
+.dashboard-container, .search-container, .gallery-container {
+    margin-left: 280px !important;
+    padding: 20px !important;
+    padding-top: 100px !important;
+    background: #ffffff !important;
+    min-height: 100vh !important;
+}
+
+/* Cards avec le même style que le profil */
+.dashboard-header, .search-header, .gallery-header,
+.stats-grid, .chart-container, .activity-list,
+.search-main, .filters-panel, .results-panel,
+.upload-section, .albums-section {
+    background: #34495e !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card, .user-card, .photo-card, .album-card {
+    background: #34495e !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.stat-card::before, .user-card::before, .photo-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.stat-card:hover::before, .user-card:hover::before, .photo-card:hover::before {
+    left: 100% !important;
+}
+
+.stat-card:hover, .user-card:hover, .photo-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.1) !important;
+    transform: translateY(-5px) scale(1.02) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Textes en blanc pour contraste */
+.dashboard-header h1, .search-header h1, .gallery-header h1,
+.chart-title, .stat-label, .activity-type,
+.filter-label, .results-count, .album-name {
+    color: white !important;
+}
+
+.stat-value {
+    color: #3498db !important;
+}
+
+.activity-date, .user-location {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Inputs et formulaires */
+.form-control, .search-input {
+    background: #2c3e50 !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.form-control:focus, .search-input:focus {
+    border-color: #3498db !important;
+    background: #34495e !important;
+}
+
+.form-control::placeholder, .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 1rem !important;
+    }
+    
+    .navbar-user-info {
+        display: none !important;
+    }
+    
+    .navbar-actions {
+        gap: 0.5rem !important;
+    }
+    
+    .navbar-btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .profile-sidebar {
+        transform: translateX(-100%) !important;
+    }
+    
+    .dashboard-container, .search-container, .gallery-container {
+        margin-left: 0 !important;
+    }
+}
+
+
+/* ============================================= */
+/* AMÉLIORATIONS PREMIUM */
+/* ============================================= */
+
+/* Scrollbar personnalisée pour sidebar */
+.profile-sidebar::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.profile-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.profile-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5) !important;
+    border-radius: 10px !important;
+}
+
+.profile-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.8) !important;
+}
+
+/* Effet de particules sur le navbar */
+.modern-navbar::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%) !important;
+    pointer-events: none !important;
+}
+
+/* Effet de brillance sur les boutons */
+.navbar-btn::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.navbar-btn:hover::before {
+    left: 100% !important;
+}
+
+/* Amélioration des cards avec bordure lumineuse */
+.stat-card, .user-card, .photo-card {
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%) !important;
+}
+
+.stat-card:hover, .user-card:hover, .photo-card:hover {
+    border-color: rgba(59, 130, 246, 0.5) !important;
+    background: linear-gradient(135deg, #3d5a80 0%, #34495e 100%) !important;
+}
+
+/* Effet de pulsation sur le badge User */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.6);
+    }
+}
+
+.sidebar-user-role {
+    animation: pulse 2s ease-in-out infinite !important;
+}
+
+/* Amélioration du lien actif avec animation */
+@keyframes activeGlow {
+    0%, 100% {
+        box-shadow: 0 4px 16px rgba(243, 156, 18, 0.4), 0 0 20px rgba(243, 156, 18, 0.2);
+    }
+    50% {
+        box-shadow: 0 6px 24px rgba(243, 156, 18, 0.6), 0 0 30px rgba(243, 156, 18, 0.3);
+    }
+}
+
+.sidebar-link.active {
+    animation: activeGlow 2s ease-in-out infinite !important;
+}
+
+/* Effet de vague sur les headers */
+.dashboard-header, .search-header, .gallery-header {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.dashboard-header::before, .search-header::before, .gallery-header::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%) !important;
+    animation: wave 8s linear infinite !important;
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(50%, 50%) rotate(360deg);
+    }
+}
+
+/* Amélioration des inputs avec effet focus */
+.form-control:focus, .search-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Effet de survol sur les icônes */
+.sidebar-link i {
+    transition: all 0.3s ease !important;
+}
+
+.sidebar-link:hover i {
+    transform: scale(1.2) rotate(5deg) !important;
+    color: #3b82f6 !important;
+}
+
+.sidebar-link.active i {
+    transform: scale(1.1) !important;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) !important;
+}
+
+/* Amélioration du titre MES SERVICES */
+.sidebar-section-title {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.sidebar-section-title::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #e91e63, transparent) !important;
+    animation: shimmer 3s ease-in-out infinite !important;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Effet de profondeur sur le contenu principal */
+.dashboard-container, .search-container, .gallery-container {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(233, 30, 99, 0.03) 0%, transparent 50%),
+        #ffffff !important;
+}
+
+/* Amélioration des stat-values avec gradient */
+.stat-value {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 800 !important;
+}
+
+/* Effet de hover sur l'avatar */
+.sidebar-avatar {
+    position: relative !important;
+}
+
+.sidebar-avatar::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -3px !important;
+    left: -3px !important;
+    right: -3px !important;
+    bottom: -3px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(45deg, #3b82f6, #e91e63, #f39c12) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: -1 !important;
+}
+
+.sidebar-avatar:hover::after {
+    opacity: 0.6 !important;
+    animation: rotate 2s linear infinite !important;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Amélioration du divider avec animation */
+.sidebar-divider {
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent) !important;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Effet de typing sur les textes */
+.sidebar-user-name {
+    position: relative !important;
+}
+
+/* Amélioration des transitions globales */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Effet de particules flottantes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.navbar-brand {
+    animation: float 3s ease-in-out infinite !important;
+}
+
+/* Amélioration des boutons avec effet ripple */
+.navbar-btn {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.navbar-btn::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translate(-50%, -50%) !important;
+    transition: width 0.6s, height 0.6s !important;
+}
+
+.navbar-btn:active::after {
+    width: 300px !important;
+    height: 300px !important;
+}

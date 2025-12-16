@@ -1,0 +1,419 @@
+/* ============================================
+   3D EFFECTS & ANIMATIONS
+   ============================================ */
+
+/* 3D Perspective Container */
+.perspective-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* 3D Card Flip Effect */
+.card-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+    transform: rotateY(180deg);
+}
+
+.card-3d-front,
+.card-3d-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.card-3d-back {
+    transform: rotateY(180deg);
+}
+
+/* 3D Floating Animation */
+@keyframes float-3d {
+    0%, 100% {
+        transform: translateY(0px) rotateX(0deg) rotateZ(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotateX(5deg) rotateZ(2deg);
+    }
+    50% {
+        transform: translateY(-40px) rotateX(10deg) rotateZ(0deg);
+    }
+    75% {
+        transform: translateY(-20px) rotateX(5deg) rotateZ(-2deg);
+    }
+}
+
+.float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+/* 3D Rotating Cube */
+@keyframes rotate-3d {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.rotate-3d {
+    animation: rotate-3d 20s linear infinite;
+    transform-style: preserve-3d;
+}
+
+/* 3D Depth Shadow */
+.depth-shadow {
+    position: relative;
+    box-shadow: 
+        0 1px 1px rgba(0,0,0,0.12),
+        0 2px 2px rgba(0,0,0,0.12),
+        0 4px 4px rgba(0,0,0,0.12),
+        0 8px 8px rgba(0,0,0,0.12),
+        0 16px 16px rgba(0,0,0,0.12);
+}
+
+/* 3D Tilt Effect */
+.tilt-3d {
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+}
+
+.tilt-3d:hover {
+    transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) scale(1.05);
+}
+
+/* 3D Glow Effect */
+.glow-3d {
+    position: relative;
+    box-shadow: 
+        0 0 20px rgba(255, 182, 0, 0.3),
+        0 0 40px rgba(255, 182, 0, 0.2),
+        inset 0 0 20px rgba(255, 182, 0, 0.1);
+}
+
+.glow-3d::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffb600, #ffc933, #ffb600);
+    border-radius: 15px;
+    opacity: 0;
+    z-index: -1;
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0;
+        box-shadow: 0 0 5px rgba(255, 182, 0, 0.5);
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 20px rgba(255, 182, 0, 0.8);
+    }
+}
+
+/* 3D Parallax Effect */
+.parallax-3d {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-3d-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* 3D Morphing Shape */
+@keyframes morph-3d {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotateZ(0deg);
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: rotateZ(180deg);
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotateZ(360deg);
+    }
+}
+
+.morph-3d {
+    animation: morph-3d 8s ease-in-out infinite;
+}
+
+/* 3D Stagger Animation */
+@keyframes stagger-3d {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) rotateX(-90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+.stagger-3d {
+    animation: stagger-3d 0.6s ease-out forwards;
+}
+
+.stagger-3d:nth-child(1) { animation-delay: 0.1s; }
+.stagger-3d:nth-child(2) { animation-delay: 0.2s; }
+.stagger-3d:nth-child(3) { animation-delay: 0.3s; }
+.stagger-3d:nth-child(4) { animation-delay: 0.4s; }
+.stagger-3d:nth-child(5) { animation-delay: 0.5s; }
+.stagger-3d:nth-child(6) { animation-delay: 0.6s; }
+.stagger-3d:nth-child(7) { animation-delay: 0.7s; }
+.stagger-3d:nth-child(8) { animation-delay: 0.8s; }
+.stagger-3d:nth-child(9) { animation-delay: 0.9s; }
+
+/* 3D Ribbon Effect */
+.ribbon-3d {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ffb600 0%, #ffc933 100%);
+    transform: skewX(-20deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.ribbon-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent #e6a500 transparent transparent;
+}
+
+.ribbon-3d::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: #e6a500 transparent transparent transparent;
+}
+
+/* 3D Neon Text */
+.neon-3d {
+    color: #ffb600;
+    text-shadow: 
+        0 0 10px #ffb600,
+        0 0 20px #ffb600,
+        0 0 30px #ffb600,
+        0 0 40px #ff6600,
+        0 0 70px #ff6600,
+        0 0 80px #ff6600,
+        0 0 100px #ff6600,
+        0 0 150px #ff6600;
+    animation: neon-flicker 2s infinite;
+}
+
+@keyframes neon-flicker {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #ffb600,
+            0 0 20px #ffb600,
+            0 0 30px #ffb600,
+            0 0 40px #ff6600;
+    }
+    50% {
+        text-shadow: 
+            0 0 5px #ffb600,
+            0 0 10px #ffb600,
+            0 0 15px #ffb600,
+            0 0 20px #ff6600;
+    }
+}
+
+/* 3D Hologram Effect */
+.hologram-3d {
+    position: relative;
+    background: linear-gradient(45deg, rgba(255,182,0,0.1), rgba(255,182,0,0.05));
+    border: 2px solid rgba(255,182,0,0.3);
+    box-shadow: 
+        inset 0 0 20px rgba(255,182,0,0.1),
+        0 0 20px rgba(255,182,0,0.2);
+    animation: hologram-pulse 3s ease-in-out infinite;
+}
+
+@keyframes hologram-pulse {
+    0%, 100% {
+        box-shadow: 
+            inset 0 0 20px rgba(255,182,0,0.1),
+            0 0 20px rgba(255,182,0,0.2);
+    }
+    50% {
+        box-shadow: 
+            inset 0 0 30px rgba(255,182,0,0.2),
+            0 0 30px rgba(255,182,0,0.4);
+    }
+}
+
+/* 3D Bounce Animation */
+@keyframes bounce-3d {
+    0%, 100% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(-30px) scaleY(0.95);
+    }
+}
+
+.bounce-3d {
+    animation: bounce-3d 1s ease-in-out infinite;
+}
+
+/* 3D Slide In */
+@keyframes slide-in-3d {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotateY(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg);
+    }
+}
+
+.slide-in-3d {
+    animation: slide-in-3d 0.8s ease-out;
+}
+
+/* 3D Pulse */
+@keyframes pulse-3d {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.pulse-3d {
+    animation: pulse-3d 2s ease-in-out infinite;
+}
+
+/* 3D Gradient Animation */
+@keyframes gradient-shift-3d {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-3d {
+    background: linear-gradient(-45deg, #ffb600, #ffc933, #ff9500, #ffb600);
+    background-size: 400% 400%;
+    animation: gradient-shift-3d 15s ease infinite;
+}
+
+/* 3D Shimmer Effect */
+@keyframes shimmer-3d {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer-3d {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer-3d 2s infinite;
+}
+
+/* 3D Flip Card Container */
+.flip-card-3d {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-3d-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-3d:hover .flip-card-3d-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-3d-front,
+.flip-card-3d-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.flip-card-3d-front {
+    background: linear-gradient(135deg, #ffb600, #ffc933);
+    color: #1e3149;
+}
+
+.flip-card-3d-back {
+    background: linear-gradient(135deg, #1e3149, #15202e);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Responsive 3D */
+@media (max-width: 768px) {
+    .float-3d {
+        animation: float-3d 4s ease-in-out infinite;
+    }
+    
+    .rotate-3d {
+        animation: rotate-3d 15s linear infinite;
+    }
+    
+    .neon-3d {
+        font-size: 1.2rem;
+    }
+}

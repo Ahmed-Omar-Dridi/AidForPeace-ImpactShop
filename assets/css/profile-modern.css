@@ -1,0 +1,1960 @@
+/* ============================================= */
+/* PROFILE MODERNE - Utilise dashboard.css      */
+/* ============================================= */
+
+/* Import du CSS moderne */
+@import url('dashboard.css');
+
+/* Container principal */
+.profile-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-areas: "sidebar main";
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.profile-sidebar {
+    grid-area: sidebar;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    color: var(--white);
+    padding: var(--spacing-2xl) 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid rgba(30, 64, 175, 0.3);
+    z-index: 10;
+}
+
+.profile-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.profile-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+}
+
+/* Section profil utilisateur dans le sidebar - Design Ultra Premium */
+.sidebar-user-profile {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    border-bottom: 1px solid rgba(30, 64, 175, 0.3);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    background: linear-gradient(180deg, rgba(30, 64, 175, 0.1) 0%, transparent 100%);
+}
+
+/* Halo animé en arrière-plan */
+.sidebar-user-profile::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(30, 64, 175, 0.4) 0%, rgba(59, 130, 246, 0.2) 40%, transparent 70%);
+    border-radius: 50%;
+    animation: avatar-glow-premium 4s ease-in-out infinite;
+    pointer-events: none;
+    filter: blur(20px);
+}
+
+/* Cercles décoratifs */
+.sidebar-user-profile::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(30, 64, 175, 0.2);
+    border-radius: 50%;
+    animation: avatar-ring-pulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes avatar-glow-premium {
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+}
+
+@keyframes avatar-ring-pulse {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Avatar dans le sidebar - Design Premium */
+.sidebar-avatar {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto var(--spacing-lg);
+    position: relative;
+    z-index: 2;
+}
+
+/* Bordure dégradée animée autour de l'avatar */
+.sidebar-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    background-size: 200% 200%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: gradient-rotate-avatar 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+@keyframes gradient-rotate-avatar {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.sidebar-avatar:hover::before {
+    opacity: 1;
+}
+
+/* Image de l'avatar */
+.sidebar-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important;
+    border: 5px solid rgba(255, 255, 255, 0.15);
+    object-fit: cover;
+    box-shadow: 
+        0 10px 40px rgba(30, 64, 175, 0.5),
+        0 0 60px rgba(30, 64, 175, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Effet de brillance sur l'avatar */
+.sidebar-avatar img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.sidebar-avatar:hover img {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 15px 50px rgba(30, 64, 175, 0.7),
+        0 0 80px rgba(30, 64, 175, 0.5),
+        inset 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Informations utilisateur dans le sidebar */
+.sidebar-user-info {
+    position: relative;
+    z-index: 2;
+    animation: fade-in-up 0.6s ease-out 0.2s backwards;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar-user-name {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.sidebar-user-role {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    border: 1px solid rgba(30, 64, 175, 0.4);
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+}
+
+/* Anciens styles (compatibilité) */
+.avatar-image {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-full);
+    border: 4px solid rgba(30, 64, 175, 0.5);
+    margin: 0 auto var(--spacing-md);
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(30, 64, 175, 0.6), 0 0 60px rgba(30, 64, 175, 0.3);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.avatar-image:hover {
+    transform: scale(1.08) rotate(5deg);
+    border-color: #1e40af;
+    box-shadow: 0 12px 40px rgba(30, 64, 175, 0.8), 0 0 80px rgba(30, 64, 175, 0.5);
+}
+
+.user-name {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.user-role {
+    font-size: var(--font-sm);
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Séparateur dans le sidebar */
+.sidebar-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, 0.5) 50%, transparent 100%);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Menu sidebar */
+.sidebar-menu {
+    padding: 0 var(--spacing-lg);
+    flex-grow: 1;
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.sidebar-section-title {
+    font-size: var(--font-sm);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(8px);
+    color: white;
+}
+
+.sidebar-link:hover::before {
+    left: 100%;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    transform: translateX(8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.sidebar-link i {
+    width: 24px;
+    text-align: center;
+    font-size: var(--font-lg);
+}
+
+.sidebar-sublink {
+    padding-left: calc(var(--spacing-lg) + 24px + var(--spacing-md));
+    font-size: var(--font-sm);
+}
+
+/* Contenu principal */
+.profile-main {
+    grid-area: main;
+    padding: var(--spacing-2xl);
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(30, 64, 175, 0.1);
+    border: 1px solid rgba(30, 64, 175, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
+    background-size: 200% 100%;
+    animation: gradient-slide 3s ease infinite;
+}
+
+@keyframes gradient-slide {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.profile-header h1 {
+    font-size: var(--font-3xl);
+    font-weight: 800;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+    display: inline-block;
+    text-shadow: 0 2px 10px rgba(30, 64, 175, 0.2);
+}
+
+.profile-header h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 10px rgba(30, 64, 175, 0.5);
+    animation: width-pulse 2s ease-in-out infinite;
+}
+
+@keyframes width-pulse {
+    0%, 100% { width: 80px; opacity: 1; }
+    50% { width: 100px; opacity: 0.8; }
+}
+
+.profile-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.btn-profile {
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: var(--font-md);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all var(--transition-normal);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-profile {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary-profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary-profile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6);
+}
+
+.btn-primary-profile:hover::before {
+    left: 100%;
+}
+
+.btn-secondary-profile {
+    background: white;
+    color: var(--dark);
+    border: 2px solid var(--light);
+}
+
+.btn-secondary-profile:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Cards de profil */
+.profile-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(30, 64, 175, 0.1);
+    border: 1px solid rgba(30, 64, 175, 0.15);
+    animation: fadeInUp 0.5s ease-out;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #1e40af 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(30, 64, 175, 0.2);
+    border-color: rgba(30, 64, 175, 0.3);
+}
+
+.profile-card:hover::before {
+    opacity: 1;
+}
+
+.profile-card h2 {
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.profile-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: var(--radius-full);
+}
+
+.profile-card h2 i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.profile-card:hover h2 i {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(30, 64, 175, 0.5);
+}
+
+/* Grille d'informations */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.info-item {
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(30, 64, 175, 0.2);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(30, 64, 175, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.info-item:hover {
+    border-color: #1e40af;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+}
+
+.info-item:hover::before {
+    left: 100%;
+}
+
+.info-label {
+    font-size: var(--font-sm);
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.info-label i {
+    color: #1e40af;
+}
+
+.info-value {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "main";
+    }
+    
+    .profile-sidebar {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        padding: var(--spacing-md);
+        overflow-x: auto;
+    }
+    
+    .sidebar-avatar {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-md);
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0;
+    }
+    
+    .avatar-image {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+    }
+    
+    .user-name {
+        font-size: var(--font-md);
+    }
+    
+    .sidebar-menu {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        gap: var(--spacing-xs);
+    }
+    
+    .sidebar-section {
+        margin-bottom: 0;
+    }
+    
+    .sidebar-section-title {
+        display: none;
+    }
+    
+    .sidebar-link {
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+    
+    .sidebar-link span {
+        display: none;
+    }
+    
+    .sidebar-link:hover,
+    .sidebar-link.active {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-main {
+        padding: var(--spacing-lg);
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+    }
+    
+    .btn-profile {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================= */
+/* AMÉLIORATIONS AVANCÉES - EFFETS PREMIUM       */
+/* ============================================= */
+
+/* Particules animées en arrière-plan - désactivées pour fond blanc */
+.profile-container::after {
+    display: none;
+}
+
+/* Effet de verre sur les cards */
+.profile-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.profile-card:hover::after {
+    left: 100%;
+}
+
+/* Amélioration des liens sidebar avec effet néon */
+.sidebar-link {
+    position: relative;
+}
+
+.sidebar-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: 0 3px 3px 0;
+    transition: height 0.3s ease;
+    box-shadow: 0 0 10px rgba(30, 64, 175, 0.8);
+}
+
+.sidebar-link:hover::after,
+.sidebar-link.active::after {
+    height: 70%;
+}
+
+/* Effet de pulsation sur l'avatar */
+.avatar-image {
+    animation: avatar-pulse 3s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.6), 0 0 60px rgba(30, 64, 175, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(30, 64, 175, 0.8), 0 0 80px rgba(30, 64, 175, 0.5);
+    }
+}
+
+/* Amélioration du header avec effet parallaxe */
+.profile-header {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.profile-header:hover {
+    transform: translateZ(10px);
+}
+
+/* Effet de brillance sur les boutons */
+.btn-profile {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-profile::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+    animation: btn-shine 3s ease-in-out infinite;
+}
+
+@keyframes btn-shine {
+    0%, 100% { transform: rotateZ(60deg) translate(-5em, 7.5em); }
+    50% { transform: rotateZ(60deg) translate(1em, -10em); }
+}
+
+/* Amélioration des info-items avec effet 3D */
+.info-item {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.info-item:hover {
+    transform: translateY(-8px) rotateX(5deg) scale(1.03);
+}
+
+/* Effet de typing sur le nom d'utilisateur */
+.user-name {
+    position: relative;
+    overflow: hidden;
+}
+
+.user-name::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1e40af, transparent);
+    animation: name-underline 2s ease-in-out infinite;
+}
+
+@keyframes name-underline {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+/* Scrollbar personnalisée pour le contenu principal */
+.profile-main::-webkit-scrollbar {
+    width: 10px;
+}
+
+.profile-main::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+}
+
+.profile-main::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(15, 23, 42, 0.3);
+}
+
+.profile-main::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+/* Effet de vague sur le header */
+.profile-header::before {
+    animation: wave-slide 3s ease infinite, wave-opacity 3s ease infinite;
+}
+
+@keyframes wave-opacity {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Amélioration des titres de cards avec effet de scan */
+.profile-card h2 {
+    overflow: hidden;
+}
+
+.profile-card h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(30, 64, 175, 0.2), transparent);
+    animation: title-scan 3s ease-in-out infinite;
+}
+
+@keyframes title-scan {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+/* Effet de profondeur sur les icônes */
+.profile-card h2 i {
+    position: relative;
+}
+
+.profile-card h2 i::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: var(--radius-lg);
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.3s ease;
+}
+
+.profile-card:hover h2 i::before {
+    opacity: 0.7;
+}
+
+/* Animation d'entrée pour les cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Délai d'animation pour chaque card */
+.profile-card:nth-child(1) { animation-delay: 0.1s; }
+.profile-card:nth-child(2) { animation-delay: 0.2s; }
+.profile-card:nth-child(3) { animation-delay: 0.3s; }
+.profile-card:nth-child(4) { animation-delay: 0.4s; }
+.profile-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Effet de gradient animé sur les bordures */
+@keyframes border-gradient {
+    0%, 100% {
+        border-color: rgba(30, 64, 175, 0.2);
+    }
+    50% {
+        border-color: rgba(59, 130, 246, 0.5);
+    }
+}
+
+.info-item {
+    animation: border-gradient 3s ease-in-out infinite;
+}
+
+/* Effet de lueur sur les éléments actifs */
+.sidebar-link.active {
+    box-shadow: 
+        0 0 20px rgba(30, 64, 175, 0.5),
+        inset 0 0 20px rgba(30, 64, 175, 0.2);
+}
+
+/* Amélioration du bouton secondaire */
+.btn-secondary-profile {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(30, 64, 175, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary-profile:hover {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border-color: #1e40af;
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
+}
+
+/* Effet de focus amélioré */
+.btn-profile:focus,
+.sidebar-link:focus,
+.info-item:focus {
+    outline: 3px solid rgba(30, 64, 175, 0.5);
+    outline-offset: 3px;
+}
+
+/* Animation de chargement pour les cards */
+.profile-card {
+    animation: fadeInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Effet de réflexion sur le header */
+.profile-header h1 {
+    position: relative;
+}
+
+.profile-header h1::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0.1;
+    transform: scaleY(-1);
+    background: linear-gradient(180deg, #1e40af 0%, transparent 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(2px);
+}
+
+/* Amélioration responsive avec animations */
+@media (max-width: 768px) {
+    .profile-container::before,
+    .profile-container::after {
+        display: none;
+    }
+    
+    .profile-card::after {
+        display: none;
+    }
+    
+    .btn-profile::after {
+        display: none;
+    }
+}
+
+/* Mode sombre automatique (si préféré par le système) */
+@media (prefers-color-scheme: dark) {
+    .profile-card,
+    .profile-header,
+    .info-item {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .profile-card h2,
+    .info-value {
+        color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+/* Accessibilité - Réduction des animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================= */
+/* AMÉLIORATION DES SECTIONS D'INFORMATION       */
+/* ============================================= */
+
+/* Style pour les listes à puces dans les cards */
+.profile-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-card ul li {
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-left: 4px solid #1e40af;
+    border-radius: var(--radius-md);
+    font-size: var(--font-md);
+    line-height: 1.6;
+    color: #334155;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #1e40af 0%, #3b82f6 100%);
+    transition: width 0.3s ease;
+}
+
+.profile-card ul li:hover {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+}
+
+.profile-card ul li:hover::before {
+    width: 100%;
+    opacity: 0.1;
+}
+
+.profile-card ul li strong {
+    color: #1e40af;
+    font-weight: 700;
+}
+
+/* Section Admin System ou Info utilisateur */
+.user-info-section {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.user-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 50%, #3b82f6 100%);
+    background-size: 200% 100%;
+    animation: gradient-slide 3s ease infinite;
+}
+
+.user-info-section h3 {
+    color: white;
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.user-info-section h3::before {
+    content: '👤';
+    font-size: var(--font-3xl);
+}
+
+.user-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-info-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.user-info-list li:last-child {
+    border-bottom: none;
+}
+
+.user-info-list li:hover {
+    padding-left: var(--spacing-sm);
+    color: white;
+}
+
+.user-info-list li i,
+.user-info-list li::before {
+    color: #60a5fa;
+    font-size: var(--font-lg);
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Icônes personnalisées pour les info-list */
+.user-info-list li[data-icon="status"]::before {
+    content: '🟢';
+}
+
+.user-info-list li[data-icon="email"]::before {
+    content: '✉️';
+}
+
+.user-info-list li[data-icon="calendar"]::before {
+    content: '📅';
+}
+
+/* Badge de statut */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.status-badge.online {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.5);
+}
+
+.status-badge.offline {
+    background: rgba(148, 163, 184, 0.2);
+    border-color: rgba(148, 163, 184, 0.5);
+}
+
+/* Amélioration des paragraphes dans les cards */
+.profile-card p {
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Style pour les citations ou notes importantes */
+.profile-card blockquote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-left: 4px solid #1e40af;
+    border-radius: var(--radius-md);
+    font-style: italic;
+    color: #475569;
+}
+
+/* Amélioration des liens dans les cards */
+.profile-card a {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.profile-card a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+    transition: width 0.3s ease;
+}
+
+.profile-card a:hover {
+    color: #1e3a8a;
+}
+
+.profile-card a:hover::after {
+    width: 100%;
+}
+
+/* Séparateur élégant */
+.profile-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, 0.3) 50%, transparent 100%);
+    margin: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.profile-divider::before {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    color: #1e40af;
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-sm);
+}
+
+/* Amélioration des codes ou textes techniques */
+.profile-card code {
+    background: rgba(30, 64, 175, 0.1);
+    color: #1e40af;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* Amélioration des petits textes / notes */
+.profile-card small {
+    display: block;
+    color: #64748b;
+    font-size: var(--font-sm);
+    margin-top: var(--spacing-xs);
+}
+
+/* Grid pour afficher des informations en colonnes */
+.info-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.info-column-item {
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.8) 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.info-column-item:hover {
+    border-color: rgba(30, 64, 175, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+}
+
+.info-column-item .label {
+    font-size: var(--font-xs);
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-column-item .value {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: #1e40af;
+}
+
+/* ============================================= */
+/* STYLES POUR LES CLASSES EXISTANTES            */
+/* ============================================= */
+
+/* Profile meta items (email, location, member since) */
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.profile-meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-left: 4px solid #1e40af;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    color: #1e293b;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-meta-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    transition: width 0.3s ease;
+}
+
+.profile-meta-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(30, 64, 175, 0.1), transparent);
+    transition: right 0.5s ease;
+}
+
+.profile-meta-item:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.2);
+    border-left-color: #3b82f6;
+}
+
+.profile-meta-item:hover::before {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.profile-meta-item:hover::after {
+    right: 100%;
+}
+
+.profile-meta-item i {
+    color: #1e40af;
+    font-size: 1.25rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.profile-meta-item:hover i {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+/* Profile status badge */
+.profile-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: #1e40af;
+    border: 2px solid rgba(30, 64, 175, 0.2);
+    margin-bottom: var(--spacing-lg);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-status-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-status-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.25);
+    border-color: #1e40af;
+}
+
+.profile-status-badge:hover::before {
+    opacity: 1;
+}
+
+/* Profile header content */
+.profile-header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+    border-radius: var(--radius-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50% !important;
+    border: 6px solid white;
+    object-fit: cover;
+    box-shadow: 
+        0 10px 40px rgba(30, 64, 175, 0.3),
+        0 0 0 3px rgba(30, 64, 175, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    background: white;
+    padding: 4px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.profile-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(59, 130, 246, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 15px 50px rgba(30, 64, 175, 0.4),
+        0 0 0 4px rgba(30, 64, 175, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar:hover::before {
+    opacity: 1;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    margin-bottom: var(--spacing-md);
+    animation: gradient-text 3s ease infinite;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Profile view container */
+.profile-view-container {
+    flex: 1;
+    padding: 0 var(--spacing-2xl);
+    background: #ffffff;
+}
+
+/* Profile grid */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 968px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-meta {
+        align-items: center;
+    }
+}
+
+/* ============================================= */
+/* STATISTIQUES - DESIGN PROFESSIONNEL           */
+/* ============================================= */
+
+/* Grille des statistiques */
+.profile-card .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.profile-card .stat-item {
+    position: relative;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Bordure subtile au hover */
+.profile-card .stat-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    padding: 1px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay dégradé subtil */
+.profile-card .stat-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(30, 64, 175, 0.04) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-card .stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
+    border-color: rgba(30, 64, 175, 0.2);
+}
+
+.profile-card .stat-item:hover::before {
+    opacity: 1;
+}
+
+.profile-card .stat-item:hover::after {
+    opacity: 1;
+}
+
+/* Couleurs subtiles pour chaque stat */
+.profile-card .stat-item:nth-child(1) {
+    background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.profile-card .stat-item:nth-child(2) {
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.profile-card .stat-item:nth-child(3) {
+    background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+}
+
+/* Valeur statistique - Design professionnel */
+.profile-card .stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+    color: #0f172a;
+    transition: all 0.3s ease;
+}
+
+.profile-card .stat-item:nth-child(1) .stat-value {
+    color: #dc2626;
+}
+
+.profile-card .stat-item:nth-child(2) .stat-value {
+    color: #1e40af;
+}
+
+.profile-card .stat-item:nth-child(3) .stat-value {
+    color: #d97706;
+}
+
+.profile-card .stat-item:hover .stat-value {
+    transform: scale(1.08);
+}
+
+/* Label statistique - Design professionnel */
+.profile-card .stat-label {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #64748b;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.profile-card .stat-item:hover .stat-label {
+    color: #475569;
+}
+
+/* Ombres subtiles au hover pour chaque stat */
+.profile-card .stat-item:nth-child(1):hover {
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15);
+}
+
+.profile-card .stat-item:nth-child(2):hover {
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
+}
+
+.profile-card .stat-item:nth-child(3):hover {
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+
+/* Badge supplémentaire (optionnel) */
+.stat-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: 4px 10px;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .profile-card .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-card .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-card .stat-value {
+        font-size: 3rem;
+    }
+}
+
+/* ============================================= */
+/* STATUT EN TEMPS RÉEL - DESIGN PROFESSIONNEL  */
+/* ============================================= */
+
+/* Container du statut */
+.status-display {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    border-radius: var(--radius-xl);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bordure subtile au hover */
+.status-display::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    padding: 1px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay dégradé subtil */
+.status-display::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.04) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.status-display:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
+    border-color: rgba(30, 64, 175, 0.2);
+}
+
+.status-display:hover::before {
+    opacity: 1;
+}
+
+.status-display:hover::after {
+    opacity: 1;
+}
+
+/* Icône de statut */
+.status-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: var(--radius-xl);
+    border: 2px solid #e2e8f0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.status-display:hover .status-icon {
+    transform: scale(1.05);
+    border-color: rgba(30, 64, 175, 0.3);
+}
+
+/* Animation de pulsation pour le statut online */
+.status-display.online .status-icon {
+    animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+}
+
+/* Informations du statut */
+.status-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+}
+
+/* Label du statut */
+.status-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+/* Couleurs selon le statut */
+.status-display.online .status-label {
+    color: #16a34a;
+}
+
+.status-display.away .status-label {
+    color: #eab308;
+}
+
+.status-display.busy .status-label {
+    color: #dc2626;
+}
+
+.status-display.offline .status-label {
+    color: #64748b;
+}
+
+/* Message de statut */
+.status-message {
+    font-size: var(--font-md);
+    color: #475569;
+    font-style: italic;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-left: 3px solid #1e40af;
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-xs);
+}
+
+/* Heure de dernière activité */
+.status-time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-sm);
+    color: #64748b;
+    margin-top: var(--spacing-xs);
+}
+
+.status-time i {
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+/* Couleurs de fond selon le statut */
+.status-display.online {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.status-display.away {
+    background: linear-gradient(135deg, #fefce8 0%, #ffffff 100%);
+}
+
+.status-display.busy {
+    background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.status-display.offline {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Bordures colorées au hover selon le statut */
+.status-display.online:hover {
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.15);
+}
+
+.status-display.away:hover {
+    box-shadow: 0 8px 24px rgba(234, 179, 8, 0.15);
+}
+
+.status-display.busy:hover {
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15);
+}
+
+.status-display.offline:hover {
+    box-shadow: 0 8px 24px rgba(100, 116, 139, 0.15);
+}
+
+/* Badge de statut dans le header (si présent) */
+.profile-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: var(--radius-full);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: #1e40af;
+    border: 2px solid rgba(30, 64, 175, 0.2);
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-status-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.25);
+    border-color: #1e40af;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .status-display {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .status-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+    
+    .status-label {
+        font-size: 1.25rem;
+    }
+    
+    .status-time {
+        justify-content: center;
+    }
+}

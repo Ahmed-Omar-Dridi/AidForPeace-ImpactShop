@@ -1,0 +1,745 @@
+/* ============================================= */
+/* GLOBAL CSS - AID FOR PEACE */
+/* Design System Unifié et Moderne */
+/* ============================================= */
+
+:root {
+    /* Couleurs principales */
+    --primary: #1e3149;
+    --primary-dark: #15202e;
+    --secondary: #0a0a0a;
+    --accent: #ffb600;
+    
+    /* Couleurs neutres */
+    --white: #ffffff;
+    --light-grey: #f8fafc;
+    --grey: #e2e8f0;
+    --dark-grey: #334155;
+    --text-dark: #0f172a;
+    --text-light: #1e40af;
+    
+    /* Couleurs de statut */
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 9999px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+/* ============================================= */
+/* RESET & BASE */
+/* ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================= */
+/* NAVBAR - COULEURS DE L'IMAGE */
+/* ============================================= */
+
+.navbar, header {
+    background-color: #1e3149;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+    opacity: 0.9;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.auth-buttons span {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+/* ============================================= */
+/* BOUTONS - COULEURS DE L'IMAGE */
+/* ============================================= */
+
+.btn {
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #ffb600;
+    color: #1e3149;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #e6a500;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 182, 0, 0.4);
+}
+
+.btn-outline-light {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-custom {
+    background-color: #ffb600;
+    color: #1e3149;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #e6a500;
+}
+
+.btn-action {
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-action:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--grey);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--dark-grey);
+    color: white;
+}
+
+/* ============================================= */
+/* CARDS MODERNES */
+/* ============================================= */
+
+.card, .profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all var(--transition-normal);
+}
+
+.card:hover, .profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card-feature {
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.card-feature:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.card-feature i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #1e3149;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--grey);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background-color: #1e3149;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* ============================================= */
+/* FORMULAIRES MODERNES */
+/* ============================================= */
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Textes foncés pour connexion et admin */
+.login-text, .admin-text {
+    color: #0f172a;
+}
+
+/* Textes dans les formulaires et contenus */
+.auth-card p,
+.auth-card label,
+.auth-card span,
+.login-card p,
+.login-card label,
+.register-card p,
+.register-card label,
+.form-text,
+.text-muted {
+    color: #0f172a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* ============================================= */
+/* LIENS - STYLES GLOBAUX */
+/* ============================================= */
+
+a {
+    color: #1e40af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+}
+
+/* Liens dans la navbar - Style spécifique */
+.navbar a,
+.navbar-menu a,
+.nav-links a,
+header a,
+.auth-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a:hover,
+.navbar-menu a:hover,
+.nav-links a:hover,
+header a:hover,
+.auth-header a:hover {
+    color: #ffb600;
+    text-decoration: none;
+}
+
+/* Liens dans les boutons */
+.btn,
+a.btn,
+button.btn {
+    text-decoration: none;
+}
+
+.btn:hover,
+a.btn:hover {
+    text-decoration: none;
+}
+
+/* Liens dans les cartes */
+.card a,
+.profile-card a {
+    color: #1e40af;
+}
+
+.card a:hover,
+.profile-card a:hover {
+    color: #ff6b35;
+}
+
+/* Liens dans le sidebar */
+.sidebar a,
+.sidebar-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.sidebar a:hover,
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Liens dans les formulaires */
+.auth-links a,
+.form-links a {
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+.auth-links a:hover,
+.form-links a:hover {
+    color: #e55a2b;
+    text-decoration: underline;
+}
+
+/* Liens dans les alertes */
+.alert a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Liens dans le footer */
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer a:hover {
+    color: #ffb600;
+}
+
+/* Textes dans les cartes d'authentification */
+.register-card p,
+.register-card label,
+.register-card span,
+.register-card small,
+.login-card p,
+.login-card label,
+.login-card span,
+.login-card small,
+.auth-card p,
+.auth-card label,
+.auth-card span,
+.auth-card small {
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--grey);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    background: white;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.form-control:hover {
+    border-color: var(--primary);
+}
+
+.form-control::placeholder {
+    color: #475569;
+    font-weight: 500;
+}
+
+/* ============================================= */
+/* GRILLES RESPONSIVE */
+/* ============================================= */
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ============================================= */
+/* MESSAGES & ALERTES */
+/* ============================================= */
+
+.message, .alert {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid var(--success);
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid var(--error);
+}
+
+.warning {
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 4px solid var(--warning);
+}
+
+.info {
+    background: #dbeafe;
+    color: #1e40af;
+    border-left: 4px solid var(--info);
+}
+
+/* ============================================= */
+/* ANIMATIONS */
+/* ============================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* ============================================= */
+/* HERO SECTION */
+/* ============================================= */
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1e3149 0%, #15202e 50%, #0a0a0a 100%);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* ============================================= */
+/* SIDEBAR */
+/* ============================================= */
+
+.sidebar {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.sidebar .nav-link {
+    color: #1e293b;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.sidebar .nav-link:hover, 
+.sidebar .nav-link.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(10px);
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link i {
+    margin-right: 12px;
+    width: 25px;
+    text-align: center;
+}
+
+/* ============================================= */
+/* UTILITIES */
+/* ============================================= */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.gradient-text {
+    color: #1e3149;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+
+/* ============================================= */
+/* SCROLLBAR PERSONNALISÉE */
+/* ============================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1e3149;
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #15202e;
+}
+
+/* ============================================= */
+/* RESPONSIVE */
+/* ============================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        padding: 0 1rem;
+    }
+    
+    .auth-buttons {
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================= */
+/* DARK MODE SUPPORT (Optionnel) */
+/* ============================================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-grey: #1e293b;
+        --white: #0f172a;
+        --text-dark: #f1f5f9;
+        --text-light: #cbd5e1;
+        --grey: #334155;
+    }
+}

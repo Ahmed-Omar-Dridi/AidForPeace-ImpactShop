@@ -1,0 +1,536 @@
+/**
+ * Styles avancés pour la page de profil
+ * Design moderne avec sections organisées
+ */
+
+/* ============================================
+   CONTENEUR PRINCIPAL
+   ============================================ */
+.profile-advanced-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ============================================
+   SECTIONS AVEC ONGLETS
+   ============================================ */
+.profile-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e1e8ed;
+    flex-wrap: wrap;
+}
+
+.profile-tab {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #657786;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-tab:hover {
+    color: #1e3149;
+    background: #f8f9fa;
+}
+
+.profile-tab.active {
+    color: #1e3149;
+    border-bottom-color: #ffb600;
+}
+
+.profile-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.profile-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   SECTIONS MODERNES
+   ============================================ */
+.profile-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e1e8ed;
+    transition: all 0.3s;
+}
+
+.profile-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.profile-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f3f5;
+}
+
+.profile-section-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e3149;
+    border-radius: 10px;
+    color: white;
+}
+
+.profile-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.profile-section-subtitle {
+    font-size: 13px;
+    color: #657786;
+    margin: 5px 0 0 0;
+}
+
+/* ============================================
+   STATUT EN TEMPS RÉEL
+   ============================================ */
+.status-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.status-option {
+    position: relative;
+}
+
+.status-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.status-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    background: #f8f9fa;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.status-option input[type="radio"]:checked + label {
+    background-color: #1e3149;
+    color: white;
+    border-color: #1e3149;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.status-option label:hover {
+    border-color: #1e3149;
+    transform: translateY(-2px);
+}
+
+.status-message-input {
+    margin-top: 15px;
+    padding: 12px 16px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.status-message-input:focus {
+    outline: none;
+    border-color: #1e3149;
+    box-shadow: 0 0 0 3px rgba(30, 49, 73, 0.1);
+}
+
+/* ============================================
+   LOCALISATION
+   ============================================ */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.location-input-group {
+    position: relative;
+}
+
+.location-input-group input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.location-input-group input:focus {
+    outline: none;
+    border-color: #1e3149;
+    box-shadow: 0 0 0 3px rgba(30, 49, 73, 0.1);
+}
+
+.location-input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #657786;
+}
+
+.detect-location-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #ffb600;
+    color: #1e3149;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.detect-location-btn:hover {
+    background-color: #e6a500;
+}
+
+.detect-location-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.location-public-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.location-public-toggle input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* ============================================
+   AUTHENTIFICATION 2FA
+   ============================================ */
+.twofa-container {
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border: 2px solid #e1e8ed;
+}
+
+.twofa-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.twofa-toggle:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.twofa-toggle input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.twofa-config {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #1e3149;
+}
+
+.twofa-method-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.twofa-method-select:focus {
+    outline: none;
+    border-color: #1e3149;
+}
+
+.twofa-status {
+    margin-top: 15px;
+    padding: 12px 16px;
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+    border-radius: 8px;
+    color: #155724;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ============================================
+   BIOGRAPHIE
+   ============================================ */
+.bio-type-selector {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.bio-type-option {
+    flex: 1;
+}
+
+.bio-type-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.bio-type-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.bio-type-option input[type="radio"]:checked + label {
+    background-color: #1e3149;
+    color: white;
+    border-color: #1e3149;
+}
+
+.bio-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.3s;
+}
+
+.bio-textarea:focus {
+    outline: none;
+    border-color: #1e3149;
+    box-shadow: 0 0 0 3px rgba(30, 49, 73, 0.1);
+}
+
+/* ============================================
+   BOUTONS D'ACTION
+   ============================================ */
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e1e8ed;
+}
+
+.btn-primary-gradient {
+    flex: 1;
+    padding: 14px 30px;
+    background-color: #ffb600;
+    color: #1e3149;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary-gradient:hover {
+    background-color: #e6a500;
+}
+
+.btn-secondary-outline {
+    padding: 14px 30px;
+    background: white;
+    color: #657786;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary-outline:hover {
+    border-color: #1e3149;
+    color: #1e3149;
+}
+
+/* ============================================
+   BADGES ET INDICATEURS
+   ============================================ */
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.feature-badge.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.feature-badge.danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ============================================
+   HELPER TEXT
+   ============================================ */
+.helper-text {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-left: 3px solid #1e3149;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #657786;
+}
+
+.helper-text-icon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .profile-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .status-selector {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+    }
+    
+    .bio-type-selector {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.profile-section {
+    animation: slideIn 0.4s ease-out;
+}
+
+.profile-section:nth-child(1) { animation-delay: 0.1s; }
+.profile-section:nth-child(2) { animation-delay: 0.2s; }
+.profile-section:nth-child(3) { animation-delay: 0.3s; }
+.profile-section:nth-child(4) { animation-delay: 0.4s; }
