@@ -1,6 +1,6 @@
-# AidForPeace
+# AidForPeace-ImpactShop
 
-Plateforme humanitaire de dons et e-commerce solidaire.
+E-commerce humanitaire avec CRUD complet - Plateforme humanitaire de dons et e-commerce solidaire.
 
 ## Fonctionnalités
 
